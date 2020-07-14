@@ -35,7 +35,7 @@ class Api::V1::DemoController < ApplicationController
         if animal_type == 'dog'
             context = Context.new(DogNameStrategy.new)
             result = context.do_some_business_logic
-        if elsif animal_type == 'cat'
+        elsif animal_type == 'cat'
             context = Context.new(CatNameStrategy.new)
             result = context.do_some_business_logic
         else

@@ -19,10 +19,7 @@ class Context
     # delegates some work to the strategy object instead of
     # implementing multiple versions of the algorithm on its own.
     def do_some_business_logic
-  
-      puts 'Context: Sorting data using the strategy (not sure how it\'ll do it)'
       result = @strategy.get_animal_name()
       result
-
     end
   end
