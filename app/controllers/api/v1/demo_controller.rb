@@ -28,7 +28,7 @@ class Api::V1::DemoController < ApplicationController
     # GET
     # api/v1/demo?animal='dog' or 'cat'
     def index 
-        animal_type = params[:type]
+        animal_type = params[:animal]
 
         result 
 
