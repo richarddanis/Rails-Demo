@@ -32,15 +32,18 @@ class Api::V1::DemoController < ApplicationController
 
         if animal_type == 'dog'
             context = Context.new(DogNameStrategy.new)
+            status = :ok
             result = context.do_some_business_logic
         elsif animal_type == 'cat'
             context = Context.new(CatNameStrategy.new)
+            status = :ok
             result = context.do_some_business_logic
         else
-            #return 400 not found
+            status = :not_found
+            result = 'Animal not found. sry'
         end
 
-        render json: result
+        render json: result, status: status
     end
     # GET
     # api/v1/demo/:id
