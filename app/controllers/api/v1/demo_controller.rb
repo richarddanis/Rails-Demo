@@ -30,8 +30,6 @@ class Api::V1::DemoController < ApplicationController
     def index 
         animal_type = params[:animal]
 
-        result 
-
         if animal_type == 'dog'
             context = Context.new(DogNameStrategy.new)
             result = context.do_some_business_logic
@@ -42,7 +40,7 @@ class Api::V1::DemoController < ApplicationController
             #return 400 not found
         end
 
-        return 
+        render json: result
     end
     # GET
     # api/v1/demo/:id
